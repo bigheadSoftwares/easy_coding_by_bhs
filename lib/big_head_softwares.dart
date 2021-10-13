@@ -2,6 +2,7 @@ library big_head_softwares;
 
 import 'dart:ui';
 
+import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 
@@ -11,10 +12,12 @@ part 'glassmorphism.dart';
 part 'extension.dart';
 part 'neumorphism.dart';
 part 'custom_list_tile.dart';
-part 'scale_dialog.dart';
+part 'scale_widget.dart';
 part 'custom_text_field.dart';
 part 'tag_clipper.dart';
 part 'clipper.dart';
+part 'custom_text_button.dart';
+part 'text.dart';
 
 /// [screenHeight] provides the current screen height.
 double screenHeight(BuildContext context) => MediaQuery.of(context).size.height;

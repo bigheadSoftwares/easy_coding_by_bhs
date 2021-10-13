@@ -1,6 +1,8 @@
-name: big_head_softwares
-description: This package helps you to write code faster and be more productive. This package is provided by Bighead Softwares LLP feel free to use it in any manner you desire.
-version: 0.0.2
+name: easy_coding
+description: This package helps you to write code faster and be more productive.
+  This package is provided by Bighead Softwares LLP feel free to use it in any
+  manner you desire.
+version: 0.1.0
 homepage: https://github.com/bigheadSoftwares/easy_coding_by_bhs.git
 
 environment:
@@ -10,9 +12,9 @@ environment:
 dependencies:
   flutter:
     sdk: flutter
+  http: ^0.13.2
 
 dev_dependencies:
   flutter_test:
     sdk: flutter
-flutter:
-
+flutter: null

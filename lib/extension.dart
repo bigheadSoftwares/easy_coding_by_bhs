@@ -4,12 +4,15 @@ part of 'big_head_softwares.dart';
 extension Capitalize on String {
   String capitalize() {
     List<String> list = this.split(' ');
-    String finalList = '';
+    List<String> finalList = [];
+    String finalString = '';
     for (var i = 0; i < list.length; i++) {
-      list[i][0].toUpperCase();
-      finalList += '${list[i]} ';
+      finalList.add('${list[i][0].toUpperCase()}${list[i].substring(1)} ');
     }
-    return finalList;
+    for (var i = 0; i < finalList.length; i++) {
+      finalString += finalList[i];
+    }
+    return finalString;
   }
 }
 

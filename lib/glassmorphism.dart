@@ -1,7 +1,7 @@
 part of 'big_head_softwares.dart';
 
 extension Glassmorphism on Widget {
-  BackdropFilter glassmorphism({
+  Container glassmorphism({
     /// [frostValue] is the value to detemine the frostiness of the widget that it is used on
     /// Lower the frost value higher the glassiness
     double frostValue = 16,
@@ -18,26 +18,41 @@ extension Glassmorphism on Widget {
 
     /// [shadowColor] as the name suggest it is color of shadow which comes with the galss effect
     Color? shadowColor,
+
+    double? borderRadius,
   }) {
-    return BackdropFilter(
-      filter: ImageFilter.blur(sigmaX: frostValue, sigmaY: frostValue),
-      child: Container(
-        decoration: BoxDecoration(
-          boxShadow: <BoxShadow>[
-            if (boxShadow)
-              BoxShadow(
-                color: Colors.white.withOpacity(0.2),
-                blurRadius: blurRadius,
-              ),
-            if (boxShadow)
-              BoxShadow(
-                color: shadowColor ?? Colors.black.withOpacity(0.2),
-                blurRadius: blurRadius,
-              ),
-          ],
-          color: frostColor ?? Colors.grey.shade400.withOpacity(0.2),
+    return Container(
+      margin: EdgeInsets.symmetric(
+        // horizontal: horizontalMargin,
+        // vertical: verticalMargin,
+      ),
+      child: ClipRRect(
+        borderRadius: BorderRadius.circular(borderRadius ?? 0),
+        child: BackdropFilter(
+          filter: ImageFilter.blur(sigmaX: frostValue, sigmaY: frostValue),
+          child: Container(
+            padding: EdgeInsets.symmetric(
+              // horizontal: horizontalPadding,
+              // vertical: verticalPadding,
+            ),
+            decoration: BoxDecoration(
+              boxShadow: <BoxShadow>[
+                if (boxShadow)
+                  BoxShadow(
+                    color: Colors.white.withOpacity(0.2),
+                    blurRadius: blurRadius,
+                  ),
+                if (boxShadow)
+                  BoxShadow(
+                    color: Colors.black.withOpacity(0.2),
+                    blurRadius: blurRadius,
+                  ),
+              ],
+              color: frostColor ?? Colors.grey.shade400.withOpacity(0.2),
+            ),
+            child: this,
+          ),
         ),
-        child: this,
       ),
     );
   }
