@@ -3,12 +3,18 @@ library big_head_softwares;
 import 'dart:ui';
 
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 
 part 'navigation.dart';
 part 'round_container.dart';
 part 'glassmorphism.dart';
-part 'capitalize.dart';
+part 'extension.dart';
 part 'neumorphism.dart';
+part 'custom_list_tile.dart';
+part 'scale_dialog.dart';
+part 'custom_text_field.dart';
+part 'tag_clipper.dart';
+part 'clipper.dart';
 
 /// [screenHeight] provides the current screen height.
 double screenHeight(BuildContext context) => MediaQuery.of(context).size.height;
@@ -59,5 +65,5 @@ SizedBox sizedBoxHeight(double height) => SizedBox(height: height);
 /// . if you want to use child widget please refer to [SizedBox]
 SizedBox sizedBoxWidth(double width) => SizedBox(width: width);
 
-/// [radius] helps to replace [BorderRadius.circular(double)] to [radius(double)] 
+/// [radius] helps to replace [BorderRadius.circular(double)] to [radius(double)]
 BorderRadius radius(double radius) => BorderRadius.circular(radius);
