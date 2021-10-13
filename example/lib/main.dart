@@ -9,10 +9,10 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      title: 'Bighead Software example',
+      title: 'Easy Coding example',
 
       /// To access [ThemeData] we generally use [Theme.of(context).primaryColor] or [Theme.of(context).textTheme.headline1]
-      /// This whole code can be replaced by using [BigHead.theme(context).primaryColor] or [BigHead.textTheme(context).headline1] respectively
+      /// This whole code can be replaced by using [theme(context).primaryColor] or [textTheme(context).headline1] respectively
       theme: ThemeData(
         primarySwatch: Colors.blue,
         textTheme: TextTheme(
@@ -36,35 +36,35 @@ class HomePage extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('Bighead Software example'),
+        title: Text(' Software example'),
       ),
       body: Center(
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: <Widget>[
-            /// No need to call [MediaQuery.of(context).size.height] use [BigHead.screenHeight(context)]
-            /// similarly for screen width use [BigHead.screenWidth(context)]
+            /// No need to call [MediaQuery.of(context).size.height] use [.screenHeight(context)]
+            /// similarly for screen width use [.screenWidth(context)]
             CustomButton(
-              onPressed: () => print(BigHead.screenHeight(context)),
+              onPressed: () => print(screenHeight(context)),
               buttonText: 'Screen Height',
             ),
             CustomButton(
-              onPressed: () => print(BigHead.screenWidth(context)),
+              onPressed: () => print(screenWidth(context)),
               buttonText: 'Screen Width',
             ),
 
-            /// to give space vertically you can use [BigHead.sizedBoxHeight(yourHeight)]
-            BigHead.sizedBoxHeight(20),
+            /// to give space vertically you can use [.sizedBoxHeight(yourHeight)]
+            sizedBoxHeight(20),
 
             /// Instead of using [Navigator.push(context,MaterialPageRoute(builder: (context)=>Screen2())] you can use [push(context,Screen2()])]
             CustomButton(
               onPressed: () => push(context, Screen2()),
               buttonText: 'Easy Navigation',
             ),
-            BigHead.sizedBoxHeight(80),
+            sizedBoxHeight(80),
             Text(
               'Go to Plugin documentation for more awesome productivity shortcuts',
-              style: BigHead.textTheme(context).bodyText1,
+              style: textTheme(context).bodyText1,
               textAlign: TextAlign.center,
               maxLines: 2,
             )
@@ -84,7 +84,7 @@ class Screen2 extends StatelessWidget {
       body: Center(
         child: Text(
           'Screen2',
-          style: BigHead.textTheme(context).headline1,
+          style: textTheme(context).headline1,
         ),
       ),
     );
